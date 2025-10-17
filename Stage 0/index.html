@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> Profile Card</title>
+    <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <main>
+            <article data-testid="test-profile-card"
+            class="profile-card">
+        <header>
+            <h2 data-testid="test-user-name">Ajayi Gloria</h2>
+        </header>
+
+        <figure>
+            <img src="./images/IMG_3197.jpeg"
+            alt="gloria profile picture"
+            data-testid="test-user-avatar">
+
+            <figcaption>Frontend Developer, Event Planner & Baker</figcaption>
+        </figure>
+
+        <p>
+            Current time (ms):
+            <span data-testid="test-user-time"
+            id="currentTime"></span>
+        </p>
+
+        <nav data-testid="test-user-social-links"
+        aria-label="Social Media Links">
+    <ul>
+        <li>
+            <a href="https://twitter.com/gamdatglopretty"
+            target="_blank"
+            rel="noopener noreferrer"
+            data-testid="test-user-social-twitter">Twitter</a>
+        </li>
+
+        <li>
+            <a href="https://github.com/Gamdat"
+            target="_blank"
+            rel="noopener noreferrer"
+            data-testid="test-user-social-github">GitHub</a>
+        </li>
+
+        <li>
+            <a href="https://www.linkedin.com/in/gloriaajayi076"
+            target="_blank"
+            rel="noopener noreferrer"
+            data-testid="test-user-social-linkedIn">LinkedIn</a>
+        </li>
+    </ul>
+</nav>
+
+<section data-testid="test-user-hobbies">
+    <h3>Hobbies</h3>
+    <ul>
+        <li>Baking</li>
+        <li>Coding</li>
+        <li>Solving Puzzles</li>
+        <li>Watching Kdramas</li>
+    </ul>
+</section>
+
+<section data-testid="test-user-dislikes">
+    <h3>Dislikes</h3>
+    <ul>
+        <li>Messy work</li>
+        <li>Procastination</li>
+        <li>Pretense</li>
+    </ul>
+</section>
+    </article>
+        </main>
+        <script src="script.js" defer></script>
+    </body>
+</html>
