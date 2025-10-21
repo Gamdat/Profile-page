@@ -1,3 +1,18 @@
+:root{
+    --bg-1: #060a13;
+    --bg-2: #0a101d;
+    --accent-gradient:linear-gradient(135deg, #667eea, #764ba2, #f093fb);
+  --accent-gradient-light:linear-gradient(135deg, #8aa1f2, #9bbcb5, #f0b3fb);
+  --muted: #94a3b8;
+  --text: #e6eef8;
+  --glass: rgba(255, 255, 255, 0.04);
+  --glass-border: rgba(255, 255, 255, 0.06);
+  --radius: 18px;
+  --maxw: 940px;
+  --blue-glow: rgba(56, 189, 248, 0.4);
+}
+
+
 *{
     box-sizing: border-box;
 }
@@ -5,28 +20,60 @@
 body{
     font-family: "Poppins", sans-serif;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     margin: 0;
-    background: linear-gradient(135deg, #fef6ff, #e4f0ff);
-    color: #333;
+    background: var(--bg-1);
+    color: var(--text);
 }
 
+header{
+    background: var(--bg-2);
+    box-shadow: 0 2px 5px var(--blue-glow);
+    padding:  1rem 0;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    width: 100%;
+}
+
+.nav-bar a{
+    text-decoration: none;
+    color: var(--muted);
+    font-size: 1.2rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-bar a:hover,
+.nav-bar a:focus{
+    color: #fff;
+    background: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
 .profile-card{
-    background: #fff;
-    border-radius: 16px;
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5);
+    background: var(--glass);
+    border-radius: var(--radius);
+    box-shadow: 0 6px 18px var(--blue-glow);
+    border: 1px solid var(--glass-border);
     padding: 2rem;
     max-width: 420px;
     width: 100%;
     text-align: center;
+    margin-top: 3rem;
+    backdrop-filter: blur(10px);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .profile-card:hover{
     transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgna(0, 0, 0, 0.4);
+    box-shadow: 0 8px 20px rgna(255, 255, 255,  0.4);
 }
 
 .profile-card figure{
@@ -38,13 +85,17 @@ body{
     height: 160px;
     object-fit: cover;
     border-radius: 50%;
-    border: 4px solid #ffd6ec;
+    border: 4px solid transparent;
+    background-image: var(--accent-gradient);
+    background-origin: border-box;
     margin-bottom: 1rem;
 }
 
 .profile-card h2{
     margin: .5rem 0;
-    color: #4169e1;
+    background: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     font-size: 1.6rem;
     text-align: center;
     margin-bottom: 1rem;
@@ -54,15 +105,17 @@ body{
     margin: .5rem 0 1rem;
     line-height: 1.8;
     font-size: .95rem;
+    color: var(--muted);
 }
 
 #currentTime{
     display: inline-block;
     font-weight: 600;
-    background: #d0d9f0;
+    background: var(--bg-2);
     padding: .3rem .6rem;
     border-radius: 8px;
-    color: #333;
+    border: 1px solid var(--glass-border);
+    color: var(--text);
     margin-top: 1rem;
     letter-spacing: 2px;
 }
@@ -78,17 +131,19 @@ nav ul{
 
 nav a{
     text-decoration: none;
-    color: #4169e1;
-    background: #d0d9f0;
+    color: var(--text);
+    background: var(--bg-1);
     padding: .5rem 1rem;
     border-radius: 8px;
+    border: 1px solid var(--glass-border);
     transition: background 0.3s ease, 
     transform 0.2s ease;
 }
 
 nav a:hover,
 nav a:focus{
-    background: #c9dbff;
+    background: var(--accent-gradient);
+    color: #fff;
     transform: scale(1.05);
     outline: none;
 }
@@ -99,8 +154,10 @@ section{
 }
 
 section h3{
-    color: #4169e1;
-    margin-bottom: 1rem;
+    background: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: .5rem;
     font-size: 1.1rem;
 }
 
@@ -108,7 +165,7 @@ section ul{
     list-style: square;
     margin: 0;
     padding-left: 1.5rem;
-    color: #444;
+    color: var(--muted);
 }
 
 @media (max-width:768px){

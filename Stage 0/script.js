@@ -1,9 +1,13 @@
-function updateTime() {
-    const timeEI =
-    document.getElementById("currentTime");
-    timeEI.textContent = Date.now();
+document.addEventListener("DOMContentLoaded", () => {
+    const timeElement = document.getElementById("currentTime");
+    
+    if (timeElement) {
+    function updateTime() {
+    timeElement.textContent = Date.now();
 }
 
 updateTime();
+setInterval(updateTime, 1000);    
 
-setInterval(updateTime, 1000);
+    }
+});
